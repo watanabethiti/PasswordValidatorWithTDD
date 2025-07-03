@@ -32,7 +32,7 @@ public class PasswordValidatorTest{
             System.out.println("Test Case 3 FAILED "+pw+": Expected MEDIUM but got " + result3);
         }
 
-        // Test Case 4: รหัสผ่านมีตัวใหญ่ ตัวเล็ก และตัวเลขจะ STRONG
+        // Test Case 4: รหัสผ่านมีตัวใหญ่ ตัวเล็ก และอักขระพิเศษจะ STRONG
         pw = "280747Woon.";
         PasswordStrength result4 = PasswordValidator.validate(pw);
         if (result4 == PasswordStrength.STRONG) {
