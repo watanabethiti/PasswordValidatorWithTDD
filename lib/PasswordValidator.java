@@ -14,7 +14,7 @@ public class PasswordValidator {
          int countLower = 0;
          int countUpper = 0;
          int countNum = 0;
-
+         int countSP = 0 ;
 
         if(password==null || password.length()<minLength)
             return PasswordStrength.INVALID;
@@ -22,18 +22,18 @@ public class PasswordValidator {
         for(char c : password.toCharArray()){
             if(Character.isLowerCase(c)){ countLower++ ;}
             else if(Character.isUpperCase(c)) { countUpper++ ;}
-            else if(Character.isDigit(c)){ countNum++ ;}
+            else if(Character.isDigit(c)){ countNum++ ;} else { countSP++;}
         }
         if(countNum==password.length() || countLower == password.length()){
             return PasswordStrength.WEAK;
         }                                                                                                                                                                                      
             
-        if((countLower > 0) && (countUpper > 0)){
+        if((countLower > 0) && (countUpper > 0) && (countSP == 0)){
             return PasswordStrength.MEDIUM;
         }
             
+            return PasswordStrength.STRONG; 
+
         
-        if((countLower > 0) && (countUpper > 0) && (countNum > 0))
-        return PasswordStrength.STRONG; // TODO: การคืนค่านี้ถูกต้องหรือไม่?
     }
 }
