@@ -24,10 +24,14 @@ public class PasswordValidator {
             else if(Character.isUpperCase(c)) { countUpper++ ;}
             else if(Character.isDigit(c)){ countNum++ ;}
         }
-        if(countNum==password.length() || countLower == password.length())                                                                                                                                                                                      
+        if(countNum==password.length() || countLower == password.length()){
             return PasswordStrength.WEAK;
-        if(countLower > 0 && countUpper > 0)
+        }                                                                                                                                                                                      
+            
+        if((countLower > 0) && (countUpper > 0)){
             return PasswordStrength.MEDIUM;
+        }
+            
         
         
         return PasswordStrength.STRONG; // TODO: การคืนค่านี้ถูกต้องหรือไม่?
