@@ -33,7 +33,7 @@ public class PasswordValidator {
         }
             
         
-        
+        if((countLower > 0) && (countUpper > 0) && (countNum > 0))
         return PasswordStrength.STRONG; // TODO: การคืนค่านี้ถูกต้องหรือไม่?
     }
 }
